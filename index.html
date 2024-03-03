@@ -16,46 +16,49 @@
                 <label for="time" id="time">牌價最新掛牌時間:</label>
                 <br>
                 <label for="amount">金&nbsp&nbsp&nbsp&nbsp額:</label>
-                <input type="number" name="amount" id="amount">元
-                <br>
-                <label for="exchange">兌換幣:</label>
-                <select name="exchange" id="exchange">
-                    <option value="USD">美金 (USD)</option>
-                    <option value="HKD">港幣 (HKD)</option>
-                    <option value="GBP">英鎊 (GBP)</option>
-                    <option value="AUD">澳幣 (AUD)</option>
-                    <option value="CAD">加拿大幣 (CAD)</option>
-                    <option value="SGD">新加坡幣 (SGD)</option>
-                    <option value="CHF">瑞士法郎 (CHF)</option>
-                    <option value="JPY">日圓 (JPY)</option>
-                    <option value="ZAR">南非幣 (ZAR)</option>
-                    <option value="SEK">瑞典幣 (SEK)</option>
-                    <option value="NZD">紐元 (NZD)</option>
-                    <option value="THB">泰幣 (THB)</option>
-                    <option value="PHP">菲國比索 (PHP)</option>
-                    <option value="IDR">印尼幣 (IDR)</option>
-                    <option value="EUR">歐元 (EUR)</option>
-                    <option value="KRW">韓元 (KRW)</option>
-                    <option value="VND">越南盾 (VND)</option>
-                    <option value="MYR">馬來幣 (MYR)</option>
-                    <option value="CNY" selected>人民幣 (CNY)</option>
-                </select>
-                <br>
-                <label for="base">基礎幣:</label>
-                <select name="base" id="base">
-                    <option value="USD" selected>美金 (USD)</option>
-                    <option value="TWD">台幣 (TWD)</option>
-                </select>
+                <span>
+                    <input class="amount" type="number" name="amount" id="amount">元
+                    <br>
+                    <label for="exchange">兌換幣:</label>
+                    <select name="exchange" id="exchange">
+                        <option value="USD">美金 (USD)</option>
+                        <option value="HKD">港幣 (HKD)</option>
+                        <option value="GBP">英鎊 (GBP)</option>
+                        <option value="AUD">澳幣 (AUD)</option>
+                        <option value="CAD">加拿大幣 (CAD)</option>
+                        <option value="SGD">新加坡幣 (SGD)</option>
+                        <option value="CHF">瑞士法郎 (CHF)</option>
+                        <option value="JPY">日圓 (JPY)</option>
+                        <option value="ZAR">南非幣 (ZAR)</option>
+                        <option value="SEK">瑞典幣 (SEK)</option>
+                        <option value="NZD">紐元 (NZD)</option>
+                        <option value="THB">泰幣 (THB)</option>
+                        <option value="PHP">菲國比索 (PHP)</option>
+                        <option value="IDR">印尼幣 (IDR)</option>
+                        <option value="EUR">歐元 (EUR)</option>
+                        <option value="KRW">韓元 (KRW)</option>
+                        <option value="VND">越南盾 (VND)</option>
+                        <option value="MYR">馬來幣 (MYR)</option>
+                        <option value="CNY" selected>人民幣 (CNY)</option>
+                    </select>
+
+                    <label for="base">基礎幣:</label>
+                    <select name="base" id="base">
+                        <option value="USD" selected>美金 (USD)</option>
+                        <option value="TWD">台幣 (TWD)</option>
+                    </select>
+                </span>
                 <br>
             </div>
             <br>
             <div id="bb">
-                <button type="button" id="exchange">轉換</button>
+                <button type="button" id="convert">轉換</button>
                 <button type="button" id="reset">清除</button>
                 <br>
             </div>
         </form>
     </div>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
@@ -64,4 +67,4 @@
 <!-- 問老師
 1.已經git add和git commit之後才想起可以用.gitignore不控管圖片folder怎麼辦?
 怎麼把已經git的檔案從git移除?
-2.可以把小國旗的圖案加在Select的後方嗎? -->
+-->
