@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>显示最新时间</title>
+</head>
+
+<body>
+
+    <p id="currentTime"></p>
+
+    <script>
+        // 获取当前时间
+        function getCurrentTime() {
+            var currentDate = new Date();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+
+            // 添加前导零，确保时间以两位数字显示
+            hours = (hours < 10 ? "0" : "") + hours;
+            minutes = (minutes < 10 ? "0" : "") + minutes;
+            seconds = (seconds < 10 ? "0" : "") + seconds;
+
+            // 构建时间字符串
+            var currentTimeString = hours + ":" + minutes + ":" + seconds;
+
+            return currentTimeString;
+        }
+
+        // 更新页面上的时间显示
+        function updateClock() {
+            var currentTimeElement = document.getElementById("currentTime");
+            if (currentTimeElement) {
+                currentTimeElement.innerHTML = getCurrentTime();
+            }
+        }
+
+        // 每秒钟更新一次时间显示
+        setInterval(updateClock, 1000);
+
+        // 页面加载时立即更新时间显示
+        updateClock();
+    </script>
+
+</body>
+
+</html>
