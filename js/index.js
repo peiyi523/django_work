@@ -12,17 +12,29 @@ function convertExchange() {
     let amount = amountEl.value;
     let exchange = exchangeEl.value;
     let base = baseEl.value;
-
     console.log(amount, exchange, base);
+    if (amount == "") {
+        alert("請輸入金額");
+        return;
+    }
+    if (exchange == "") {
+        alert("請輸入兌換幣別");
+        return;
+    }
+    if (base == "") {
+        alert("請輸入基礎幣別");
+        return;
+    }
+
 }
 resetEl.addEventListener("click", resetForm);
 function resetForm() {
     amountEl.value = "";
     exchangeEl.value = "";
     baseEl.value = "";
-
-
 }
+
+
 
 
 
