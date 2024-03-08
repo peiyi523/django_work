@@ -10,6 +10,13 @@ body {
     color: #805300;
 }
 
+#form-container {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 12px;
+    /* background-color: #805300; */
+}
+
 #info {
     /* background-color: #805300; */
     /* color: red; */

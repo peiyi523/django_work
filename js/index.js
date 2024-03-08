@@ -2,7 +2,7 @@ const amountEl = document.querySelector("#amount");
 const exchangeEl = document.querySelector("#exchange");
 const baseEl = document.querySelector("#base");
 const convertEl = document.querySelector("#convert");
-
+const resetEl = document.querySelector("#reset")
 
 console.log(convertEl, amountEl, exchangeEl, baseEl);
 
@@ -15,6 +15,17 @@ function convertExchange() {
 
     console.log(amount, exchange, base);
 }
+resetEl.addEventListener("click", resetForm);
+function resetForm() {
+    amountEl.value = "";
+    exchangeEl.value = "";
+    baseEl.value = "";
+
+
+}
+
+
+
 
 
 
@@ -39,4 +50,3 @@ function updateClock() {
 
 updateClock();
 
-// 2024年3月4日 22:53
