@@ -26,44 +26,51 @@
                         <label for="exchange">兌換幣:</label>
                         <select name="exchange" id="exchange">
                             <option value="" selected>&nbsp</option>
-                            <option value="USD">美金 (USD)</option>
-                            <option value="HKD">港幣 (HKD)</option>
-                            <option value="GBP">英鎊 (GBP)</option>
-                            <option value="AUD">澳幣 (AUD)</option>
-                            <option value="CAD">加拿大幣 (CAD)</option>
-                            <option value="SGD">新加坡幣 (SGD)</option>
-                            <option value="CHF">瑞士法郎 (CHF)</option>
-                            <option value="JPY">日圓 (JPY)</option>
-                            <option value="ZAR">南非幣 (ZAR)</option>
-                            <option value="SEK">瑞典幣 (SEK)</option>
-                            <option value="NZD">紐元 (NZD)</option>
-                            <option value="THB">泰幣 (THB)</option>
-                            <option value="PHP">菲國比索 (PHP)</option>
-                            <option value="IDR">印尼幣 (IDR)</option>
-                            <option value="EUR">歐元 (EUR)</option>
-                            <option value="KRW">韓元 (KRW)</option>
-                            <option value="VND">越南盾 (VND)</option>
-                            <option value="MYR">馬來幣 (MYR)</option>
-                            <option value="CNY">人民幣 (CNY)</option>
+                            <option value="美金">美金 (USD)</option>
+                            <option value="港幣">港幣 (HKD)</option>
+                            <option value="英鎊">英鎊 (GBP)</option>
+                            <option value="澳幣">澳幣 (AUD)</option>
+                            <option value="加拿大幣">加拿大幣 (CAD)</option>
+                            <option value="新加坡幣">新加坡幣 (SGD)</option>
+                            <option value="瑞士法郎">瑞士法郎 (CHF)</option>
+                            <option value="日圓">日圓 (JPY)</option>
+                            <option value="南非幣">南非幣 (ZAR)</option>
+                            <option value="瑞典幣">瑞典幣 (SEK)</option>
+                            <option value="紐元">紐元 (NZD)</option>
+                            <option value="泰幣">泰幣 (THB)</option>
+                            <option value="菲國比索">菲國比索 (PHP)</option>
+                            <option value="印尼幣">印尼幣 (IDR)</option>
+                            <option value="歐元">歐元 (EUR)</option>
+                            <option value="韓元">韓元 (KRW)</option>
+                            <option value="越南盾">越南盾 (VND)</option>
+                            <option value="馬來幣">馬來幣 (MYR)</option>
+                            <option value="人民幣">人民幣 (CNY)</option>
                         </select>
 
                         <label for="base">基礎幣:</label>
                         <select name="base" id="base">
                             <option value="" selected>&nbsp</option>
-                            <option value="USD">美金 (USD)</option>
-                            <option value="TWD">台幣 (TWD)</option>
+                            <option value="美金">美金 (USD)</option>
+                            <option value="台幣">台幣 (TWD)</option>
                         </select>
                     </span>
                     <br>
                 </div>
                 <br>
-                <div id="bb">
-                    <button type="button" id="convert">轉換</button>
-                    <button type="button" id="reset">清除</button>
-                    <br>
+                <div id="result">
+                    <div class="examount"></div>
+                    <div class="exchange"></div>=
+                    <div class="base"></div>
+
                 </div>
-            </div>
         </form>
+        <div id="bb">
+            <button type="button" id="convert">轉換</button>
+            <button type="button" id="reset">清除</button>
+            <br>
+        </div>
+    </div>
+
 
     </div>
     <script src="./js/index.js"></script>
@@ -75,4 +82,5 @@
 <!-- 問老師
 1.已經git add和git commit之後才想起可以用.gitignore不控管圖片folder怎麼辦?
 怎麼把已經git的檔案從git移除?
+2.index.html中牌價最新掛牌時間為什麼寫到label中間就會不見?怎麼改顏色
 -->

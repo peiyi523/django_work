@@ -13,6 +13,12 @@ function convertExchange() {
     let exchange = exchangeEl.value;
     let base = baseEl.value;
     console.log(amount, exchange, base);
+    document.querySelector(".examount").innerHTML = amount;
+    document.querySelector(".exchange").innerHTML = exchange;
+    document.querySelector(".base").innerHTML = base;
+
+
+
     if (amount == "") {
         alert("請輸入金額");
         return;
@@ -48,7 +54,8 @@ function getCurrentTime() {
     let day = currentDate.getDate();
     let hours = currentDate.getHours();
     let minutes = currentDate.getMinutes();
-    let currentTimeStr = year + "年" + month + "月" + day + "日" + " " + hours + ":" + minutes;
+    let seconds = currentDate.getSeconds();
+    let currentTimeStr = year + "年" + month + "月" + day + "日" + " " + hours + ":" + minutes + ":" + seconds;
     return currentTimeStr;
 
 }
@@ -59,6 +66,7 @@ function updateClock() {
         timeEl.innerHTML = getCurrentTime();
     }
 }
+setInterval(updateClock, 1000);
 
 updateClock();
 

@@ -89,3 +89,7 @@ option {
     font-size: 16px;
     height: 25px
 }
+
+#result {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
