@@ -1,6 +1,6 @@
 import pandas as pd
 
-# import numpy as np
+import numpy as np
 
 
 def get_rate():
@@ -15,7 +15,10 @@ def get_rate():
     first_value = df[cal_column].iloc[0]
     # 將要操作的那欄每一個數字除以第一個數字，並將結果放在新的一欄中
     df["原幣兌美元"] = df[cal_column] / first_value
-    return df
+    new_df = df.iloc[:, [3]]
+
+    df_json = new_df.to_json()
+    return df_json
 
 
 print(get_rate())

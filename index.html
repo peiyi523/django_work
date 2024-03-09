@@ -23,7 +23,7 @@
                     <span>
                         <input class="amount" type="number" name="amount" id="amount">元
                         <br>
-                        <label for="exchange">兌換幣:</label>
+                        <label for="exchange">從:</label>
                         <select name="exchange" id="exchange">
                             <option value="" selected>&nbsp</option>
                             <option value="美金">美金 (USD)</option>
@@ -44,10 +44,10 @@
                             <option value="韓元">韓元 (KRW)</option>
                             <option value="越南盾">越南盾 (VND)</option>
                             <option value="馬來幣">馬來幣 (MYR)</option>
-                            <option value="人民幣">人民幣 (CNY)</option>
+                            <option value="人民幣" selected>人民幣 (CNY)</option>
                         </select>
 
-                        <label for="base">基礎幣:</label>
+                        <label for="base">兌換為:</label>
                         <select name="base" id="base">
                             <option value="" selected>&nbsp</option>
                             <option value="美金">美金 (USD)</option>
@@ -60,6 +60,7 @@
                 <div id="result">
                     <div class="examount"></div>
                     <div class="exchange"></div>=
+                    <div class="exbase"></div>
                     <div class="base"></div>
 
                 </div>
@@ -70,6 +71,9 @@
             <br>
         </div>
     </div>
+    </div>
+    <div>
+
 
 
     </div>

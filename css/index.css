@@ -91,5 +91,10 @@ option {
 }
 
 #result {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
 }
