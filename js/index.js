@@ -51,8 +51,8 @@ const rateData = {};
 async function getRate() {
     const res = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`);
     const data = await res.json();
-    // rateData["CNY"] = data.rates["CNY"];
-    console.log(data);
+    rateData["CNY"] = data.rates["CNY"];
+    console.log(data, rateData["CNY"]);
 
 }
 
