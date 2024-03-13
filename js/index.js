@@ -2,27 +2,49 @@ const amountEl = document.querySelector("#amount");
 const exchangeEl = document.querySelector("#exchange");
 const baseEl = document.querySelector("#base");
 const convertEl = document.querySelector("#convert");
-const resetEl = document.querySelector("#reset")
+const resetEl = document.querySelector("#reset");
+// console.log(convertEl, amountEl, exchangeEl, baseEl);
 
+// 記錄匯率資料
+let rateData = null;
 
-console.log(convertEl, amountEl, exchangeEl, baseEl);
+// 更新即時時間
+updateClock();
+setInterval(updateClock, 1000);
 
+// 轉換按鈕監聽
 convertEl.addEventListener("click", convertExchange);
 
-function convertExchange() {
+// 清除按鈕監聽
+resetEl.addEventListener("click", () => {
+
+    amountEl.value = "";
+    exchangeEl.value = "";
+    baseEl.value = "";
+});
+
+// 取得即時匯率
+async function getRate() {
+    try {
+        const res = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`);
+        const data = await res.json();
+        rateData = data.rates;
+    } catch (e) {
+        alert(e);
+    }
+}
+
+// 轉換匯率
+async function convertExchange() {
+    // 取得最新匯率資料
+    if (rateData == null) {
+        await getRate();
+    }
+
     let amount = amountEl.value;
     let exchange = exchangeEl.value;
     let base = baseEl.value;
-    console.log(amount, exchange, base);
-    document.querySelector(".examount").innerHTML = amount;
-    document.querySelector(".exchange").innerHTML = exchange;
-
-    document.querySelector(".base").innerHTML = base;
-    const resultEl = document.querySelector("#result");
-    resultEl.style.display = "none";
-    setTimeout(function () {
-        resultEl.style.display = "flex";
-    }, 500);
+    console.log(amount, exchange, base, rateData);
 
     if (amount == "") {
         alert("請輸入金額");
@@ -36,36 +58,41 @@ function convertExchange() {
         alert("請輸入基礎幣別");
         return;
     }
-}
 
-resetEl.addEventListener("click", resetForm);
-function resetForm() {
-    amountEl.value = "";
-    exchangeEl.value = "";
-    baseEl.value = "";
-}
-
-const exbaseEl = document.querySelector(".amount")
-exbaseEl.addEventListener("input", exbaseForm);
-const rateData = {};
-async function getRate() {
-    const res = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`);
-    const data = await res.json();
-    rateData["CNY"] = data.rates["CNY"];
-    console.log(data, rateData["CNY"]);
-
-}
-
-function exbaseForm() {
-    const exchangeRate = rateData[exchangeEl.value];
-    if (exchangeRate !== undefined) {
-        exbaseEl.value = (Number(this.value) * Number(rateData[exchangeEl.value])).toFixed(2);
+    let selectedOption = exchangeEl.options[exchangeEl.selectedIndex];
+    // 獲取選中的value
+    let selectedValue = selectedOption.value;
+    // 獲取選中的text(解析輸出文字用)
+    let selectedText = selectedOption.text;
+    console.log(selectedValue, selectedText);
+    // 取得對應匯率
+    const exchangeRate = rateData[selectedValue];
+    if (exchangeRate == undefined) {
+        return;
     }
+
+    // 計算結果跟幣別名稱
+    let result = (amount / exchangeRate).toFixed(2);
+    let currency = selectedText.split(" ")[0];
+    // console.log(result,currency);
+    displayResult(amount, base, currency, result);
 }
 
+// 顯示結果
+function displayResult(amount, base, currency, result) {
+    document.querySelector(".examount").innerHTML = amount;
+    document.querySelector(".exchange").innerHTML = currency;
+    document.querySelector(".base").innerHTML = base;
+    document.querySelector(".exbase").innerHTML = result;
 
-getRate();
 
+    // 隱藏跟顯示結果
+    const resultEl = document.querySelector("#result");
+    resultEl.style.display = "none";
+    setTimeout(function () {
+        resultEl.style.display = "flex";
+    }, 500);
+}
 
 
 function getCurrentTime() {
@@ -87,7 +114,7 @@ function updateClock() {
         timeEl.innerHTML = getCurrentTime();
     }
 }
-setInterval(updateClock, 1000);
 
-updateClock();
+
+
 
