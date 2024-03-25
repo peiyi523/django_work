@@ -72,9 +72,11 @@ async function convertExchange() {
     }
 
     // 計算結果跟幣別名稱
-    let result = (amount / exchangeRate).toFixed(2);
+    let ans = (amount / exchangeRate).toFixed(2);
+    let formatter = new Intl.NumberFormat('zh-Hant');
+    let result = formatter.format(ans);
     let currency = selectedText.split(" ")[0];
-    // console.log(result,currency);
+    console.log(result, currency);
     displayResult(amount, base, currency, result);
 }
 
