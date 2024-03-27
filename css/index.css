@@ -82,7 +82,9 @@ label {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+form,
 select,
+input,
 option {
     /* text-align: center; */
     width: 120px;
