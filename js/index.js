@@ -73,6 +73,7 @@ async function convertExchange() {
 
     // 計算結果跟幣別名稱
     let ans = (amount / exchangeRate).toFixed(2);
+    // 加入仟分位
     let formatter = new Intl.NumberFormat('zh-Hant');
     let result = formatter.format(ans);
     let currency = selectedText.split(" ")[0];
