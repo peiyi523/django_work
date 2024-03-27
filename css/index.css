@@ -90,11 +90,22 @@ option {
     height: 25px
 }
 
+
 #result {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     flex-direction: row;
     justify-content: space-evenly;
     font-size: large;
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    label,
+    input {
+        width: 90%;
+    }
 
 
 }
