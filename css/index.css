@@ -91,10 +91,10 @@ option {
 }
 
 #result {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     flex-direction: row;
     justify-content: space-evenly;
+    font-size: large;
 
 
 }
